@@ -1,12 +1,25 @@
 import _ from 'lodash';
+import homeContent from './homeContent';
+import aboutContent from './aboutContent';
+import menuContent from './menuContent';
+import './style.css';
 
- function component() {
-   const element = document.createElement('div');
+const pageController = (function () {
+    //cache DOM
+    const content = document.querySelector('#content');
+    const homeButton = document.querySelector('.home');
+    const menuButton = document.querySelector('.menu');
+    const aboutButton = document.querySelector('.about');
+    
+    //event listeners
+    homeButton.addEventListener('click', (e) => {content.appendChild(home)});
+    menuButton.addEventListener('click', (e) => {content.appendChild(aboutContent())});
+    aboutButton.addEventListener('click', (e) => {console.log('wow')});
 
-  // Lodash, now imported by this script
-   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    //store tab data (or should I only call it when button clicked?)
+    const home = homeContent();
+    // const menu = menuContent();
+    // const about = aboutContent();
 
-   return element;
- }
-
- document.body.appendChild(component());
+    content.appendChild(home);
+})();
