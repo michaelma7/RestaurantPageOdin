@@ -12,14 +12,22 @@ const pageController = (function () {
     const aboutButton = document.querySelector('.about');
     
     //event listeners
-    homeButton.addEventListener('click', (e) => {content.appendChild(home)});
-    menuButton.addEventListener('click', (e) => {content.appendChild(aboutContent())});
-    aboutButton.addEventListener('click', (e) => {console.log('wow')});
+    homeButton.addEventListener('click', (e) => {   content.removeChild(content.lastChild);
+                                                    content.appendChild(home);
+                                                });
+    menuButton.addEventListener('click', (e) => {   content.removeChild(content.lastChild);
+                                                    content.appendChild(menu);
+                                                });
+    aboutButton.addEventListener('click', (e) => {  content.removeChild(content.lastChild);
+                                                    content.appendChild(about);
+                                                });
 
     //store tab data (or should I only call it when button clicked?)
     const home = homeContent();
-    // const menu = menuContent();
-    // const about = aboutContent();
-
+    const menu = menuContent();
+    const about = aboutContent();
+    
+    //default load home page data
     content.appendChild(home);
+
 })();
