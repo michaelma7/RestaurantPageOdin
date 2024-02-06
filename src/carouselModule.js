@@ -3,10 +3,10 @@ import molten from './photos/Easy-Molten-Chocolate-Lava-Cakes4.jpg';
 import oreo from './photos/oreo-muffins-14.jpg';
 import brown from './photos/ya-brown-butter-maple-muffins.jpg';
 
-function carasoul () {
-    //create carasoul div
-    const carasoul = document.createElement('div');
-    carasoul.classList.add('carasoul');
+function carousel () {
+    //create carousel div
+    const carousel = document.createElement('div');
+    carousel.classList.add('carousel');
 
     //create buttons
     const leftButton = document.createElement('button');
@@ -51,12 +51,12 @@ function carasoul () {
         slides.scrollLeft += slideWidth;
     });
 
-    //creating carasoul div
-    carasoul.appendChild(leftButton);
-    carasoul.appendChild(rightButton);
-    carasoul.appendChild(slides);
+    //creating carousel div
+    carousel.appendChild(leftButton);
+    carousel.appendChild(rightButton);
+    carousel.appendChild(slides);
 
-    return carasoul
+    return carousel
 }
 
-export default carasoul
+export default carousel

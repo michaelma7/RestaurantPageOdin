@@ -1,12 +1,12 @@
-import carasoul from './carasoulModule';
+import carousel from './carouselModule';
 
 function homeContent () {
     //create container div
     const home = document.createElement('div');
     home.classList.add('homepage');
 
-    //import carasoul div from module
-    const carasoulDiv = carasoul();
+    //import carousel div from module
+    const carouselDiv = carousel();
     //create child divs
     const reviews = document.createElement('div');
     reviews.classList.add('reviews');
@@ -44,7 +44,7 @@ function homeContent () {
     
 
     //append divs
-    home.appendChild(carasoulDiv);
+    home.appendChild(carouselDiv);
     home.appendChild(reviews);
     home.appendChild(hours);
     home.appendChild(location);
